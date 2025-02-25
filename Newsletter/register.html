@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecf7fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 0px;
+            margin: 8px 0;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Subscribe to our Newsletter</h2>
+        <form id="signupForm">
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <p class="error" id="nameError">Name must be at least 3 characters</p>
+
+            <input type="email" id="email" name="email" placeholder="Your Email">
+            <p class="error" id="emailError">Enter a valid email</p>
+
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)">
+            
+            <select id="interest" name="interest" required>
+                <option value="">Select an Interest</option>
+                <option value="technology">Technology</option>
+                <option value="health">Health</option>
+                <option value="finance">Finance</option>
+                <option value="education">Education</option>
+            </select>
+
+            <button type="submit">Subscribe</button>
+        </form>
+
+        <p class="success-message" id="successMessage">Thank you for registering!</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("signupForm");
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const successMessage = document.getElementById("successMessage");
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+
+            // Function to validate name
+            function validateName() {
+                if (nameInput.value.trim().length < 3) {
+                    nameError.style.display = "block";
+                    return false;
+                } else {
+                    nameError.style.display = "none";
+                    return true;
+                }
+            }
+
+            // Function to validate email
+            function validateEmail() {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value.trim())) {
+                    emailError.style.display = "block";
+                    return false;
+                } else {
+                    emailError.style.display = "none";
+                    return true;
+                }
+            }
+
+            // Real-time validation
+            nameInput.addEventListener("input", validateName);
+            emailInput.addEventListener("input", validateEmail);
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                if (validateName() && validateEmail()) {
+                    console.log("Thank you for registering!");
+                    successMessage.style.display = "block"; // Show success message
+                    setTimeout(() => successMessage.style.display = "none", 3000); // Hide after 3 sec
+                    form.reset(); // Clear form after successful submission
+                }
+            });
+        });
+    </script>
+</body>
+</html>

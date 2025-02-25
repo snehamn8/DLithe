@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly News & Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .newsletter-container {
+            width: 70%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .head {
+            color: #004080;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 50px;
+            font-style: italic;
+        }
+        .header {
+            background-color: #004080;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .filter-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-section input, .filter-section select {
+            padding: 10px;
+            width: 60%;
+            margin: 10px 0;
+        }
+        .news-section {
+            padding: 15px;
+        }
+        .news-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .news-item:hover {
+            background-color: lightskyblue;
+        }
+        .news-item h3 {
+            color: #004080;
+        }
+        .news-content {
+            display: none;
+            padding-top: 10px;
+        }
+    </style>
+    <script>
+        function filterNews() {
+            let filterText = document.getElementById("newsFilter").value.toLowerCase();
+            let filterCategory = document.getElementById("categoryFilter").value.toLowerCase();
+            let newsItems = document.querySelectorAll(".news-item");
+            
+            newsItems.forEach(function(item) {
+                let title = item.querySelector("h3").innerText.toLowerCase();
+                let content = item.querySelector("p").innerText.toLowerCase();
+                let category = item.getAttribute("data-category").toLowerCase();
+                
+                if ((title.includes(filterText) || content.includes(filterText)) && 
+                    (filterCategory === "all" || category === filterCategory)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="newsletter-container">
+        <h1 class="head">News Today</h1>
+        <marquee class="header">Weekly News & Updates</marquee>
+        <div class="filter-section">
+            <input type="text" id="newsFilter" onkeyup="filterNews()" placeholder="Search news...">
+            <select id="categoryFilter" onchange="filterNews()">
+                <option value="all">All Categories</option>
+                <option value="climate">Climate</option>
+                <option value="technology">Technology</option>
+                <option value="health">Health</option>
+                <option value="space">Space</option>
+            </select>
+        </div>
+        <div class="news-section">
+            <div class="news-item" data-category="climate"> 
+                <h3>Climate Change Alert</h3>
+                <p>Scientists warn about rising global temperatures affecting wildlife and human life.</p>
+                <div class="news-content">
+                    <p>Recent studies have shown an alarming increase in global temperatures...</p>
+                </div>
+            </div>
+            <div class="news-item" data-category="technology">
+                <h3>AI Revolution</h3>
+                <p>Artificial Intelligence is transforming industries...</p>
+                <div class="news-content">
+                    <p>With AI-powered automation, businesses are seeing increased efficiency...</p>
+                </div>
+            </div>
+            <div class="news-item" data-category="health">
+                <h3>Breakthrough in Medicine</h3>
+                <p>Scientists discover a new treatment for a rare disease...</p>
+                <div class="news-content">
+                    <p>Medical researchers have announced a significant breakthrough...</p>
+                </div>
+            </div>
+            <div class="news-item" data-category="space">
+                <h3>Space Exploration Advances</h3>
+                <p>NASA plans new missions to Mars...</p>
+                <div class="news-content">
+                    <p>NASA has unveiled its ambitious plans for deep space exploration...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -4,43 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: rgb(219, 246, 237);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container for the News Content */
+        .newsletter-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .newsletter-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #b22222;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #e63946;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* Marquee Styling */
+        marquee {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0056b3;
+            background-color: rgba(0, 0, 255, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Back Button */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #0073e6;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        hr {
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+            padding-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .newsletter-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="newsletter-container">
+        <h1 class="head">News Today</h1>
+        <marquee class="header">Weekly News & Updates</marquee>
 
-    <h1>US, Russia To Name Teams To Negotiate "Ending Conflict In Ukraine"</h1>
-    <h4>"It is still difficult to talk about a specific date for a meeting between the two leaders," said Yuri Ushakov, Putin's foreign policy aide.</h4>
+        <h1>US, Russia To Name Teams To Negotiate "Ending Conflict In Ukraine"</h1>
+        <h3>"It is still difficult to talk about a specific date for a meeting between the two leaders," said Yuri Ushakov, Putin's foreign policy aide.</h3>
 
-    <nav>
-        <a href="news1.html">Back</a> 
-    </nav>
-
-    <img src="t9.png">
-    <p>Washington said Russia and the United States will name teams to negotiate a path to ending the war in Ukraine as soon as possible, as the superpowers met on Tuesday in Saudi Arabia without Kyiv or the EU.</p>
-
-    <p>However, no specifics on a possible meeting between Donald Trump and Vladimir Putin emerged from the gathering in Riyadh, the first high-level official Washington-Moscow talks since Ukraine's 2022 invasion.</p>
         
-    <p>Some European leaders, alarmed by Trump's overhaul of US policy on Russia, fear Washington will make serious concessions to Moscow and re-write the continent's security arrangement in a Cold War-style deal between superpowers.</p>
+
+        <img src="t9.png">
+        <p>Washington said Russia and the United States will name teams to negotiate a path to ending the war in Ukraine as soon as possible...</p>
+
+        <p>However, no specifics on a possible meeting between Donald Trump and Vladimir Putin emerged...</p>
         
-    <p>On Tuesday, US Secretary of State Marco Rubio and Russian Foreign Minister Sergei Lavrov agreed to "appoint respective high-level teams to begin working on a path to ending the conflict in Ukraine as soon as possible", the State Department said.</p>
+        <p>Some European leaders, alarmed by Trump's overhaul of US policy on Russia, fear Washington will make serious concessions...</p>
         
-    <p>Washington added the sides had also agreed to "establish a consultation mechanism" to address "irritants" to Russia and America's relationship, noting the sides would lay the groundwork for future cooperation.</p>
+        <p>On Tuesday, US Secretary of State Marco Rubio and Russian Foreign Minister Sergei Lavrov agreed...</p>
         
-    <p>Russia offered less detail on the outcome of the talks, saying: "We discussed and outlined our principled positions, and agreed that separate teams of negotiators will be in touch on this topic in due course."</p>
+        <p>Washington added the sides had also agreed to "establish a consultation mechanism"...</p>
+        
+        <p>Russia offered less detail on the outcome of the talks, saying: "We discussed and outlined our principled positions...</p>
 
-    <p>"It is still difficult to talk about a specific date for a meeting between the two leaders," said Yuri Ushakov, Putin's foreign policy aide.
-    </p>
+        <p>"It is still difficult to talk about a specific date for a meeting between the two leaders," said Yuri Ushakov, Putin's foreign policy aide.</p>
 
-    <p>Russia sketched out some of its perspectives on future talks to ending the fighting in Ukraine, arguing that settling the war required a reorganisation of Europe's defence agreements.</p>
+        <p>Russia sketched out some of its perspectives on future talks...</p>
 
-    <p>"A lasting and long-term viable resolution is impossible without a comprehensive consideration of security issues on the continent," Kremlin spokesman Dmitry Peskov told reporters on Tuesday, responding to a question by AFP.</p>
+        <p>"A lasting and long-term viable resolution is impossible without a comprehensive consideration of security issues..."</p>
 
-    <p>Before invading Ukraine in February 2022, Moscow had demanded NATO pull out of central and eastern Europe.</p>
+        <p>Before invading Ukraine in February 2022, Moscow had demanded NATO pull out of central and eastern Europe.</p>
 
-    <h2>Contact Us</h2>
-    <p><strong>Email:</strong> contact@newsletter.com</p>
-    
-    <hr>
-    <p>&copy; 2025 Weekly News & Updates</p>
+        <nav>
+            <button type="submit"><a href="news1.html">Back to Main Page</a></button> 
+        </nav>
 
+        <!-- Contact Section (Inside Newsletter Container) -->
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> contact@newsletter.com</p>
+
+        <hr>
+        <p class="footer">&copy; 2025 Weekly News & Updates</p>
+    </div>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <!-- <script src="basic.js"></script> -->
+    </head>
+    <body>
+
+        <!-- <h2>Click the button to greet!</h2>
+        <button onclick="greet('Alice')">Greet Alice</button> -->
+        <button onclick="alert('Hello')">Click Me</button>
+
+        <script>
+            let person = {
+                name: 'Alice',
+                age: 25,
+                greet: function() {
+                    console.log("Hello");
+                }
+            } 
+
+            console.log(person.name);
+            person.greet();
+
+            let fruits = ['apple', 'banana', 'orange']; 
+
+            fruits.push('grapes');
+            console.log(fruits);  
+
+            document.querySelector('button').addEventListener('click',function()
+            {
+                alert("Button Clicked!");
+            });
+
+        </script>
+        <!-- <script type="text/javascript" src="basic.js"></script> -->
+
+        
+    </body>
+</html>

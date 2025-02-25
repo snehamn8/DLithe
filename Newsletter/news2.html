@@ -4,39 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: rgb(219, 246, 237);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container for the News Content */
+        .newsletter-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .newsletter-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #b22222;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #e63946;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* Marquee Styling */
+        marquee {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0056b3;
+            background-color: rgba(0, 0, 255, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Back Button */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #0073e6;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        hr {
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+            padding-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .newsletter-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="newsletter-container">
+        <h1 class="head">News Today</h1>
+        <marquee class="header">Weekly News & Updates</marquee>
 
-    <h1>Australian Woman Loses Rs 4.3 Crore, Becomes Homeless, Trying To Find Love Online</h1>
-    <h4>Annette Ford joined the dating pool after her marriage ended in 2018 and her ex-husband moved on quickly.</h4>
+        <h1>Australian Woman Loses Rs 4.3 Crore, Becomes Homeless, Trying To Find Love Online</h1>
+        <h3>Annette Ford joined the dating pool after her marriage ended in 2018 and her ex-husband moved on quickly.</h3>
 
-    <nav>
-        <a href="news1.html">Back</a> 
-    </nav>
+        <p>A woman based in Perth has been forced to live homeless after losing over Rs 4.3 crore ($780,000) in life savings to scammers while searching for love online. According to a report in news.com.au, Annette Ford, 57, is now couch-surfing in Western Australia and hoping to secure housing at an affordable retirement village as the scammers remain free.</p>
 
-    <p>A woman based in Perth has been forced to live homeless after losing over Rs 4.3 crore ($780,000) in life savings to scammers while searching for love online. According to a report in news.com.au, Annette Ford, 57, is now couch-surfing in Western Australia and hoping to secure housing at an affordable retirement village as the scammers remain free.</p>
+        <p>Ms Ford joined the dating pool after her 33-year-long marriage ended in 2018 and her ex-husband moved on quickly. Looking to seek a love life of her own, she joined a dating site called "Plenty of Fish" where she started talking to a man named 'William'.</p>
+            
+        <p>Over the course of several months, the stranger managed to win Ms Ford's trust before asking her for money. 'William' said he needed Rs 2,75,000 ($5000) as his wallet had been stolen in Kuala Lumpur, Malaysia.</p>
+            
+        <p>"He said he had been mugged outside the site he was working on (in Kuala Lumpur) and they took his wallet and his cards," said Ms Ford.</p>
+            
+        <p>"The next thing I know he's in hospital and I'm being landed with a $5000 hospital payable to an Australian doctor. I (paid) that. Then there was a hotel bill, and he said he couldn't pay the workers on the site because he didn't have access to his cards."</p>
+            
+        <p>The requests for money continued and by the time Ms Ford suspected she had been scammed, she was out of Rs 1.6 crore ($300,000), having drained her self-managed super fund. Despite reporting the case to the Australian Federal Police, Ms Ford did not hear anything back.</p>
 
-    <p>Ms Ford joined the dating pool after her 33-year-long marriage ended in 2018 and her ex-husband moved on quickly. Looking to seek a love life of her own, she joined a dating site called "Plenty of Fish" where she started talking to a man named 'William'.</p>
-        
-    <p>Over the course of several months, the stranger managed to win Ms Ford's trust before asking her for money. 'Wlliam' said he needed Rs 2,75,000 ($5000) as his wallet had been stolen in Kuala Lumpur, Malaysia.</p>
-        
-    <p>"He said he had been mugged outside the site he was working on (in Kuala Lumpur) and they took his wallet and his cards," said Ms Ford.</p>
-        
-    <p>"The next thing I know he's in hospital and I'm being landed with a $5000 hospital payable to an Australian doctor. I (paid) that. Then there was a hotel bill, and he said he couldn't pay the workers on the site because he didn't have access to his cards."</p>
-        
-    <p>The requests for money continued and by the time Ms Ford suspected she had been scammed, she was out of Rs 1.6 crore ($300,000), having drained her self-managed super fund. Despite reporting the case to the Australian Federal Police, Ms Ford did not hear anything back.</p>
+        <h3>The second scam</h3>
+        <p>Four years later, Ms Ford came across another scammer -- this time on Facebook who went by the name, 'Nelson'. The stranger told her that he lived in Amsterdam and had a friend in the Federal Bureau of Investigation (FBI) who needed $2500 to help with an ongoing investigation.</p>
+        <p>Aware of the danger, she refused initially but the stranger told her to deposit money he sent to her into a Bitcoin ATM. Ms Ford said there was money going in and out of her account that she wasn't aware of and before she could realise it, her account was out of Rs 1.5 crore ($280,000).</p>
+        <p>Having lost everything, Ms Ford is now begging Australians to not fall prey to such scams. "They say all the right things, they sweep you off your feet but they're going to take your money and they're going to leave you broke," Ms Ford warned.</p>
+        <p>Last month, a British woman was swindled of Rs 98.5 lakh (&#163;92,300) after a friend of two decades ran a catfish scam against her.</p>
 
-    <h3>The second scam</h3>
-    <p>Four years later, Ms Ford came across another scammer -- this time on Facebook who went by the name, 'Nelson'. The stranger told her that he lived in Amsterdam and had a friend in the Federal Bureau of Investigation (FBI) who needed $2500 to help with an ongoing investigation.</p>
-    <p>Aware of the danger, she refused initially but the stranger told her to deposit money he sent to her into a Bitcoin ATM. Ms Ford said there was money going in and out of her account that she wasn't aware of and before she could realise it, her account was out of Rs 1.5 crore ($280,000).</p>
-    <p>Having lost everything, Ms Ford is now begging Australians to not fall prey to such scams. "They say all the right things, they sweep you off your feet but they're going to take your money and they're going to leave you broke," Ms Ford warned.</p>
-    <p>Last month, a British woman was swindled of Rs 98.5 lakh (&#163;92,300) after a friend of two decades, ran a catfish scam against her.</p>
+        <nav>
+            <button type="submit"><a href="news1.html">Back to Main Page</a></button> 
+        </nav>
 
-    <h2>Contact Us</h2>
-    <p><strong>Email:</strong> contact@newsletter.com</p>
-    
-    <hr>
-    <p>&copy; 2025 Weekly News & Updates</p>
-
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> contact@newsletter.com</p>
+        <hr>
+        <p class="footer">&copy; 2025 Weekly News & Updates</p>
+    </div>
 </body>
 </html>

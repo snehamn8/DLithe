@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ExploreMore</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        /* Pastel Theme */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #98c2eb, #4d92fa, #8eb1f7);
+            margin: 0;
+            padding: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 420px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            margin-top: 60px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #444;
+            background-color: #6eaff4;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #0073e6;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            text-align: left;
+            margin: 8px 0 4px;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            background-color: #fdf7f9;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #ee9ca7;
+            outline: none;
+            background-color: #fff5f7;
+        }
+
+        button {
+            background: linear-gradient(90deg, #4b66df, #7595f4);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #5c78f5, #84a3ff);
+            transform: scale(1.02);
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+
+        .success-message {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-heading">Book Your Dream Trip ✈️</div>
+        <h1>Register Now</h1>
+        <form id="registerForm">
+            
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name">
+                <p class="error" id="nameError">Name must be at least 3 characters</p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <p class="error" id="emailError">Enter a valid email</p>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <p class="error" id="phoneError">Enter a valid phone number (10 digits)</p>
+            </div>
+
+            <div class="form-group">
+                <label for="source">Source (Departure City):</label>
+                <input type="text" id="source" name="source" placeholder="Enter departure city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="" disabled selected>Select your destination</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="New York">New York</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="Switzerland">Switzerland</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="travel-date">Travel Date:</label>
+                <input type="date" id="travel-date" name="travel_date" required>
+                <p class="error" id="dateError">Please select a valid travel date</p>
+            </div>
+
+            <div class="form-group">
+                <label for="passengers">Number of Passengers:</label>
+                <input type="number" id="passengers" name="passengers" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Special Requests:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Vegetarian Meals, Window Seat"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p class="success-message" id="successMessage">Thank you for registering!</p>
+        <p class="footer">✨ Safe Travels with ExploreMore! ✨</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("registerForm");
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const phoneInput = document.getElementById("phone");
+            const dateInput = document.getElementById("travel-date");
+            const successMessage = document.getElementById("successMessage");
+            
+            function validateName() {
+                if (nameInput.value.trim().length < 3) {
+                    document.getElementById("nameError").style.display = "block";
+                    return false;
+                }
+                document.getElementById("nameError").style.display = "none";
+                return true;
+            }
+
+            function validateEmail() {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value.trim())) {
+                    document.getElementById("emailError").style.display = "block";
+                    return false;
+                }
+                document.getElementById("emailError").style.display = "none";
+                return true;
+            }
+
+            function validatePhone() {
+                if (!/^\d{10}$/.test(phoneInput.value.trim())) {
+                    document.getElementById("phoneError").style.display = "block";
+                    return false;
+                }
+                document.getElementById("phoneError").style.display = "none";
+                return true;
+            }
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (validateName() && validateEmail() && validatePhone()) {
+                    console.log("Thank you for registering!");
+                    successMessage.style.display = "block";
+                    setTimeout(() => successMessage.style.display = "none", 3000);
+                    form.reset();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly News & Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .newsletter-container {
+            width: 70%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #004080;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .breaking-news {
+            background: red;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .news-section {
+            padding: 15px;
+        }
+        .news-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item h3 {
+            color: #004080;
+        }
+        .read-more a {
+            background-color: #004080;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .popup-advertisement {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #e0f7fa;
+            padding: 20px;
+            text-align: center;
+            border-left: 5px solid #004080;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .popup-advertisement button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <h1 class="head">News Today</h1>
+        <marquee class="header">Weekly News & Updates</marquee>
+        
+        <div class="breaking-news">
+            <strong>Breaking News:</strong> India Successfully Launches Gaganyaan Test Flight, PM Modi Addresses the Nation!
+        </div>
+        
+        <div class="news-section">
+            <div class="news-item"> 
+                <h3>Gaganyaan Mission Update</h3>
+                <p>India's first human spaceflight mission is progressing with successful test flights.</p>
+                <div class="read-more">
+                    <a href="gaganyaan.html">Read More</a>
+                </div>
+            </div>
+            <div class="news-item"> 
+                <h3>Lok Sabha Elections 2024</h3>
+                <p>Election campaigns heat up as major political parties announce their manifestos.</p>
+                <div class="read-more">
+                    <a href="elections.html">Read More</a>
+                </div>
+            </div>
+            <div class="news-item"> 
+                <h3>Stock Market Surge</h3>
+                <p>Sensex and Nifty reach record highs amid strong economic growth indicators.</p>
+                <div class="read-more">
+                    <a href="stocks.html">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="news-section">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="cinema.html">Cinema</a></li>
+            </ul>
+        </div>
+        
+        <div class="subscribe-section">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest news directly to your inbox!</p>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+            <button type="submit">Subscribe</button>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 Weekly News & Updates</p>
+        </div>
+    </div>
+    
+    <div class="popup-advertisement" id="advertisementPopup">
+        <h3>Special Offer!</h3>
+        <p>Get the best travel deals and discounts now. Limited time only!</p>
+        <button onclick="closeAd()">Close</button>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("advertisementPopup").style.display = "block";
+            }, 2000);
+        };
+        function closeAd() {
+            document.getElementById("advertisementPopup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
