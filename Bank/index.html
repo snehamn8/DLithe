@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Finance Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Small Finance Bank</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to Small Finance Bank</h2>
+            <p>Your trusted partner for secure and innovative banking solutions.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Banking Services</h2>
+            <div class="services-grid">
+                <div class="service-box" onclick="openPopup('Personal Banking', 'Secure savings, current accounts, and fixed deposits.')">
+                    <h3>Personal Banking</h3>
+                    <p>Secure savings, current accounts, and fixed deposits.</p>
+                </div>
+                <div class="service-box" onclick="openPopup('Business Banking', 'Solutions for businesses, loans, and financial growth.')">
+                    <h3>Business Banking</h3>
+                    <p>Solutions for businesses, loans, and financial growth.</p>
+                </div>
+                <div class="service-box" onclick="openPopup('Loans & Credit', 'Low-interest home, car, and personal loans.')">
+                    <h3>Loans & Credit</h3>
+                    <p>Low-interest home, car, and personal loans.</p>
+                </div>
+                <div class="service-box" onclick="openPopup('Digital Banking', 'Seamless online banking with security and convenience.')">
+                    <h3>Digital Banking</h3>
+                    <p>Seamless online banking with security and convenience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Small Finance Bank</h2>
+            <p>With years of trusted banking services, we empower individuals and businesses to achieve financial success. We prioritize security, convenience, and innovation in our banking solutions.</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Need assistance? Our 24/7 support team is ready to help you with any banking queries.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Small Finance Bank. All rights reserved.</p>
+            <p>Follow us on: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+        </div>
+    </footer>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+            <button id="close-btn" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
