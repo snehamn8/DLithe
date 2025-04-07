@@ -10,44 +10,28 @@ const FoodDescription = ({ foodId, addToCart, goToCart }) => {
 
   useEffect(() => {
     const fetchFoodDetails = async () => {
+      setLoading(true);
       try {
-        setLoading(true);
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`
-        );
-        if (response.data.meals && response.data.meals.length > 0) {
-          setFood(response.data.meals[0]);
-        } else {
-          setFood(null);
-        }
+        const { data } = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodId}`);
+        setFood(data.meals ? data.meals[0] : null);
       } catch (error) {
         console.error("Error fetching food details:", error);
         setFood(null);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     };
-
     fetchFoodDetails();
   }, [foodId]);
 
-   // ✅ Handle Wishlist Toggle
-   const toggleWishlist = (food) => {
-    setWishlist((prevWishlist) => {
-      const isItemInWishlist = prevWishlist.some((item) => item.idMeal === food.idMeal);
+  // ✅ Toggle Wishlist
+  const toggleWishlist = (food) => {
+    const isItemInWishlist = wishlist.some((item) => item.idMeal === food.idMeal);
+    const updatedWishlist = isItemInWishlist
+      ? wishlist.filter((item) => item.idMeal !== food.idMeal)
+      : [...wishlist, food];
 
-      let updatedWishlist;
-      if (isItemInWishlist) {
-        updatedWishlist = prevWishlist.filter((item) => item.idMeal !== food.idMeal);
-      } else {
-        updatedWishlist = [...prevWishlist, food];
-      }
-
-      // ✅ Update localStorage
-      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-
-      return updatedWishlist; // ✅ Ensure state updates
-    });
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    setWishlist(updatedWishlist);
   };
 
   if (loading) return <p className="loading shimmer">Loading...</p>;
@@ -55,17 +39,16 @@ const FoodDescription = ({ foodId, addToCart, goToCart }) => {
 
   return (
     <div className="food-container glassmorphism fade-in-up">
+      {/* 🥗 Food Image */}
       <div className="food-image zoom-in">
         {food.strMealThumb ? (
-          <img
-            src={food.strMealThumb}
-            alt={food.strMeal}
-            className="food-img hover-scale glow-border"
-          />
+          <img src={food.strMealThumb} alt={food.strMeal} className="food-img hover-scale glow-border" />
         ) : (
           <p className="no-image">No image available</p>
         )}
       </div>
+
+      {/* 🍽️ Food Details */}
       <div className="food-details slide-up">
         <h2 className="food-title glow-text neon-text">{food.strMeal || "Unknown Food"}</h2>
         <p className="food-price pulse">₹{Math.floor(Math.random() * 300) + 100}</p>
@@ -81,6 +64,8 @@ const FoodDescription = ({ foodId, addToCart, goToCart }) => {
             </button>
           )}
         </p>
+
+        {/* 🛒 Buttons */}
         <div className="button-container">
           <button className="add-to-cart bounce gradient-button" onClick={() => addToCart(food)}>
             Add to Cart 🛒

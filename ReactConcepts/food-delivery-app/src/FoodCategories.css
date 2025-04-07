@@ -6,7 +6,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content */
+  align-items: center; 
 }
 
 /* Top Bar (Search & Veg Mode) */
@@ -51,7 +51,7 @@
 .filters-sort {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center filters */
+  justify-content: center; 
   align-items: center;
   margin-bottom: 15px;
   padding: 10px;
@@ -66,7 +66,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  justify-content: center; /* Center filter buttons */
+  justify-content: center; 
 }
 
 .filters button {
@@ -115,9 +115,9 @@
   gap: 20px;
   padding: 20px;
   text-align: center;
-  justify-content: center; /* Center grid */
+  justify-content: center; 
   width: 100%;
-  max-width: 900px; /* Prevent excessive stretching */
+  max-width: 900px; 
 }
 
 /* Category Cards */
@@ -130,7 +130,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   width: 100%;
   max-width: 200px;
-  margin: auto; /* Center each category card */
+  margin: auto; 
 }
 
 .category-card:hover {

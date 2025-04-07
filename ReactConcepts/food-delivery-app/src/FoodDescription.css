@@ -40,14 +40,16 @@ body {
 }
 
 /* Food Image */
+/* Food Image */
 .food-image {
-  flex: 0.5;
+  flex: 0.9; /* Increased space for the image */
   text-align: center;
 }
 
 .food-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px; /* Increased max width */
+  height: auto; /* Maintain aspect ratio */
   border-radius: 20px;
   object-fit: cover;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -57,6 +59,7 @@ body {
   transform: scale(1.08);
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Food Details */
 .food-details {

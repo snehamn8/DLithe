@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.css";
 
-const Cart = ({ cartItems, setCartItems, addMoreItems }) => {
+const Cart = ({ cartItems, setCartItems, addMoreItems, setPage }) => {  
   const [note, setNote] = useState("");
   const [suggestedFoods, setSuggestedFoods] = useState([]);
 
@@ -40,6 +40,15 @@ const Cart = ({ cartItems, setCartItems, addMoreItems }) => {
 
   const totalPrice = cartItems.reduce((sum, item) => sum + (item.price || 0) * item.quantity, 0);
 
+  // ✅ Fix: Check if setPage exists before calling it
+  const handlePlaceOrder = () => {
+    if (setPage) {
+      setPage("payment");  
+    } else {
+      console.error("setPage is not provided");
+    }
+  };
+
   return (
     <div className="cart-container">
       <h2>🛒 Your Cart</h2>
@@ -55,10 +64,14 @@ const Cart = ({ cartItems, setCartItems, addMoreItems }) => {
               <p>Price: ₹ {item.price * item.quantity}</p>
             </div>
             <div className="quantity-control">
-              <button onClick={() => updateCart(item, item.quantity - 1)} disabled={item.quantity === 1}>-</button>
+              <button onClick={() => updateCart(item, item.quantity - 1)} disabled={item.quantity === 1}>
+                -
+              </button>
               <span>{item.quantity}</span>
               <button onClick={() => updateCart(item, item.quantity + 1)}>+</button>
-              <button className="edit-btn" onClick={() => updateCart(item, 0)}>🗑️ Remove</button>
+              <button className="edit-btn" onClick={() => updateCart(item, 0)}>
+                🗑️ Remove
+              </button>
             </div>
           </div>
         ))
@@ -85,11 +98,25 @@ const Cart = ({ cartItems, setCartItems, addMoreItems }) => {
             <img src={food.strMealThumb} alt={food.strMeal} />
             <h4>{food.strMeal}</h4>
             <p>₹ {food.price}</p>
-            <button onClick={() => setCartItems([...cartItems, { ...food, quantity: 1 }])}>+ Add to Cart</button>
+            <button onClick={() => setCartItems([...cartItems, { ...food, quantity: 1 }])}>
+              + Add to Cart
+            </button>
           </div>
         ))}
         <div className="suggested-item add-more-card" onClick={addMoreItems}>
-          <h4 style={{ fontSize: "3rem", textAlign: "center", margin: "auto", display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>+</h4>
+          <h4
+            style={{
+              fontSize: "3rem",
+              textAlign: "center",
+              margin: "auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100%",
+            }}
+          >
+            +
+          </h4>
         </div>
       </div>
 
@@ -103,7 +130,9 @@ const Cart = ({ cartItems, setCartItems, addMoreItems }) => {
         <div className="summary">
           <p>🚀 Delivery in 30-40 mins</p>
           <h3>Total: ₹ {totalPrice.toFixed(2)}</h3>
-          <button className="place-order">📦 Place Order</button>
+          <button className="place-order" onClick={handlePlaceOrder}>
+            📦 Place Order
+          </button>
         </div>
       )}
 

@@ -31,7 +31,7 @@ const FoodCategories = ({ onSelectCategory, setPage, cartItems }) => {
       );
     }
 
-    // Veg / Non-Veg Filter (Dummy Logic, Modify as Needed)
+    // Veg / Non-Veg Filter (Dummy Logic)
     if (vegMode) {
       updatedCategories = updatedCategories.filter((category) =>
         category.strCategory.toLowerCase().includes("veg")
